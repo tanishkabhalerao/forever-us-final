@@ -111,7 +111,7 @@ export const playlists = [
   },
   {
     name: 'Forever Us',
-    detail: 'all of it, in one place',
+    detail: 'the chapters we wrote together ♡',
     color: '#9b6471',
     cover: cover('playlist-forever'),
     trackIds: [
