@@ -8,11 +8,15 @@ export const media = {
 };
 const cover = (name: string) => `${media.assets}/${name}.jpg`;
 export const tracks: Track[] = [
-  { id: 'midnight', title: 'Midnight in the City', artist: 'Our little soundtrack', album: 'Our Story', cover: cover('cover-midnight'), audio: `${media.assets}/midnight-in-the-city.mp3`, duration: '3:42', lyrics: [{time:0,line:'There is a city asleep beneath us'}, {time:12,line:'and a whole world in the space between our hands'}, {time:25,line:'Stay here, stay close, stay awhile'}, {time:42,line:'I would choose this moment again'}] },
-  { id: 'orbit', title: 'Orbit', artist: 'For the two of us', album: 'Forever Us', cover: cover('cover-orbit'), audio: `${media.assets}/orbit.mp3`, duration: '4:08', lyrics: [{time:0,line:'You pull me into your orbit'}, {time:14,line:'where the quiet sounds like home'}, {time:29,line:'Every road becomes a story'}, {time:44,line:'when I am walking it with you'}] },
-  { id: 'golden-hour', title: 'Golden Hour, Again', artist: 'A song I kept for you', album: 'Birthday Special', cover: cover('cover-golden-hour'), audio: `${media.assets}/golden-hour-again.mp3`, duration: '3:18' },
-  { id: 'way-home', title: 'The Way Home', artist: 'Our Story', album: 'Songs I Sang For You', cover: cover('cover-way-home'), audio: `${media.assets}/the-way-home.mp3`, duration: '2:56' },
-  { id: 'signal', title: 'Signal Through the Dark', artist: 'Batman Collection', album: 'Batman Collection', cover: cover('cover-signal'), audio: `${media.assets}/signal-through-the-dark.mp3`, duration: '3:51' },
+ {
+  id: 'baton-ko-teri',
+  title: 'Baton Ko Teri',
+  artist: 'Tanishka',
+  album: 'Songs I Sang For You',
+  cover: cover('cover-baton-ko-teri'),
+  audio: `${media.assets}/baton-ko-teri.mp3`,
+  duration: '3:30'
+},
 ];
 export const playlists = [
   { name: 'Our Story', detail: 'the chapters we wrote together', color: '#b88962', cover: cover('playlist-our-story'), trackIds: ['midnight','orbit','way-home'] },
