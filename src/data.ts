@@ -13,7 +13,7 @@ export const tracks: Track[] = [
   title: 'Baton Ko Teri',
   artist: 'Tanishka',
   album: 'Songs I Sang For You',
-  cover: cover('cover-baton-ko-teri'),
+  cover: cover('cover-midnight'),
   audio: `${media.assets}/baton-ko-teri.mp3`,
   duration: '3:30'
 },
