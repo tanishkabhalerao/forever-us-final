@@ -1,10 +1,19 @@
 export type Track = { id: string; title: string; artist: string; album: string; cover: string; audio: string; duration: string; lyrics?: { time: number; line: string }[] };
 export const media = {
   assets: '/assets',
+  mainPhoto: '/assets/main-photo.jpg',
   entryVideo: '/assets/entry-loop.mp4',
   surpriseVideo: '/assets/birthday-surprise.mp4',
-  photos: ['/assets/memory-01.jpg', '/assets/memory-02.jpg', '/assets/memory-03.jpg', '/assets/memory-04.jpg'],
-  voiceNotes: ['/assets/voice-note-01.mp3', '/assets/voice-note-02.mp3'],
+  photos: [
+    '/assets/memory-01.jpg',
+    '/assets/memory-02.jpg',
+    '/assets/memory-03.jpg',
+    '/assets/memory-04.jpg'
+  ],
+  voiceNotes: [
+    '/assets/voice-note-01.mp3',
+    '/assets/voice-note-02.mp3'
+  ],
 };
 const cover = (name: string) => `${media.assets}/${name}.jpg`;
 export const tracks: Track[] = [
