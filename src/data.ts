@@ -9,12 +9,12 @@ export const media = {
 const cover = (name: string) => `${media.assets}/${name}.jpg`;
 export const tracks: Track[] = [
  {
-  id: 'baton-ko-teri',
-  title: 'Baton Ko Teri',
+  id: 'Mala ved lagle.mp3',
+  title: 'Mala ved lagle.mp3',
   artist: 'Tanishka',
   album: 'Songs Dedicated To YOU',
   cover: cover('cover-midnight'),
-  audio: `${media.assets}/baton-ko-teri.mp3`,
+  audio: `${media.assets}/Mala ved lagle.mp3`,
   duration: '3:30'
 },
 ];
