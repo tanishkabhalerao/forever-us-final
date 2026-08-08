@@ -103,7 +103,7 @@ function Home({
       >
         <div className="relative z-10 max-w-xl">
           <p className="mono mb-5 text-[10px] uppercase tracking-[.3em] text-primary">
-            Good evening, H
+            Hey,Piyush
           </p>
 
           <h1 className="serif text-6xl leading-[.9] md:text-8xl">
@@ -113,8 +113,7 @@ function Home({
           </h1>
 
           <p className="mt-6 max-w-sm text-sm leading-6 text-[#d1d0c3]">
-            Tonight's soundtrack is waiting. Start wherever the feeling takes
-            you.
+            Every moment with you feels like music.
           </p>
 
           <button
