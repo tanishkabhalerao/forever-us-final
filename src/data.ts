@@ -12,7 +12,7 @@ export const tracks: Track[] = [
   id: 'baton-ko-teri',
   title: 'Baton Ko Teri',
   artist: 'Tanishka',
-  album: 'Songs I Sang For You',
+  album: 'Songs Dedicated To YOU',
   cover: cover('cover-midnight'),
   audio: `${media.assets}/baton-ko-teri.mp3`,
   duration: '3:30'
@@ -20,10 +20,10 @@ export const tracks: Track[] = [
 ];
 export const playlists = [
   { name: 'Our Story', detail: 'the chapters we wrote together', color: '#b88962', cover: cover('playlist-our-story'), trackIds: ['midnight','orbit','way-home'] },
-  { name: 'Midnight Covers', detail: 'for the hours that belong to us', color: '#7d91a9', cover: cover('playlist-midnight'), trackIds: ['midnight','orbit'] },
+  { name: 'For Chiku', detail: 'for the hours that belong to us', color: '#7d91a9', cover: cover('playlist-midnight'), trackIds: ['midnight','orbit'] },
   { name: 'Birthday Special', detail: 'made for this exact day', color: '#ad6f76', cover: cover('playlist-birthday'), trackIds: ['golden-hour','orbit'] },
-  { name: 'Batman Collection', detail: 'for my favorite night guardian', color: '#7d8361', cover: cover('playlist-batman'), trackIds: ['signal','midnight'] },
-  { name: 'Songs I Sang For You', detail: 'a little off-key, completely true', color: '#b8996c', cover: cover('playlist-sang'), trackIds: ['way-home','golden-hour'] },
+ 
+  { name: 'Songs Dedicated To YOU', detail: 'a little off-key, completely true', color: '#b8996c', cover: cover('playlist-sang'), trackIds: ['way-home','golden-hour'] },
   { name: 'Forever Us', detail: 'all of it, in one place', color: '#9b6471', cover: cover('playlist-forever'), trackIds: ['midnight','orbit','golden-hour','way-home'] },
 ];
 export const memories = [
