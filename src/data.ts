@@ -64,12 +64,70 @@ export const tracks: Track[] = [
 },
 ];
 export const playlists = [
-  { name: 'Our Story', detail: 'the chapters we wrote together', color: '#b88962', cover: cover('playlist-our-story'), trackIds: ['midnight','orbit','way-home'] },
-  { name: 'For Chiku', detail: 'for the hours that belong to us', color: '#7d91a9', cover: cover('playlist-midnight'), trackIds: ['midnight','orbit'] },
-  { name: 'Birthday Special', detail: 'made for this exact day', color: '#ad6f76', cover: cover('playlist-birthday'), trackIds: ['golden-hour','orbit'] },
- 
-  { name: 'Songs Dedicated To YOU', detail: 'a little off-key, completely true', color: '#b8996c', cover: cover('playlist-sang'), trackIds: ['way-home','golden-hour'] },
-  { name: 'Forever Us', detail: 'all of it, in one place', color: '#9b6471', cover: cover('playlist-forever'), trackIds: ['midnight','orbit','golden-hour','way-home'] },
+  {
+    name: 'Our Story',
+    detail: 'the chapters we wrote together',
+    color: '#b88962',
+    cover: cover('playlist-our-story'),
+    trackIds: [
+      'Soch na Sake.mp3',
+      'Tere Hawale.mp3',
+      'Baton Ko Teri.mp3',
+    ],
+  },
+
+  {
+    name: 'For Chiku',
+    detail: 'for the hours that belong to us',
+    color: '#7d91a9',
+    cover: cover('playlist-midnight'),
+    trackIds: [
+      'Kaun tuzhe.mp3',
+      'Tere Hawale.mp3',
+    ],
+  },
+
+  {
+    name: 'Birthday Special',
+    detail: 'made for this exact day',
+    color: '#ad6f76',
+    cover: cover('playlist-birthday'),
+    trackIds: [
+      'Mala ved lagle.mp3',
+      'Hum tere pyar me.mp3',
+    ],
+  },
+
+  {
+    name: 'Songs Dedicated To YOU',
+    detail: 'a little off-key, completely true',
+    color: '#b8996c',
+    cover: cover('playlist-sang'),
+    trackIds: [
+      'Baton Ko Teri.mp3',
+      'Tere Hawale.mp3',
+      'Soch na Sake.mp3',
+      'Mala ved lagle.mp3',
+      'Hum tere pyar me.mp3',
+      'Kaun tuzhe.mp3',
+    ],
+  },
+
+  {
+    name: 'Forever Us',
+    detail: 'all of it, in one place',
+    color: '#9b6471',
+    cover: cover('playlist-forever'),
+    trackIds: [
+      'Baton Ko Teri.mp3',
+      'Tere Hawale.mp3',
+      'Soch na Sake.mp3',
+      'Mala ved lagle.mp3',
+      'Hum tere pyar me.mp3',
+      'Kaun tuzhe.mp3',
+    ],
+  },
+];
 ];
 export const memories = [
   { src: media.photos[0], title: 'The first late night', note: 'somewhere between hello and home' },
