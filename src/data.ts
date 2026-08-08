@@ -12,10 +12,55 @@ export const tracks: Track[] = [
   id: 'Mala ved lagle.mp3',
   title: 'Mala ved lagle.mp3',
   artist: 'Tanishka',
-  album: 'Songs Dedicated To YOU',
+  album: 'Birthday Special',
   cover: cover('cover-midnight'),
   audio: `${media.assets}/Mala ved lagle.mp3`,
   duration: '3:30'
+},
+  {
+  id: 'Tere Hawale.mp3',
+  title: 'Tere Hawale.mp3',
+  artist: 'Tanishka',
+  album: 'Forever Us',
+  cover: cover('cover-midnight'),
+  audio: `${media.assets}/Tere Hawale.mp3`,
+  duration: '3:30'
+},
+{
+  id: 'Soch na Sake.mp3',
+  title: 'Soch na Sake.mp3',
+  artist: 'Tanishka',
+  album: 'Our Story',
+  cover: cover('cover-midnight'),
+  audio: `${media.assets}/Soch na Sake.mp3`,
+  duration: '4:00'
+},
+{
+  id: 'baton-ko-teri.mp3',
+  title: 'Baton Ko Teri.mp3',
+  artist: 'Tanishka',
+  album: 'Songs Dedicated To YOU',
+  cover: cover('cover-midnight'),
+  audio: `${media.assets}/baton-ko-teri.mp3`,
+  duration: '3:45'
+},
+{
+  id: 'Hum tere pyar me.mp3',
+  title: 'Hum tere pyar me.mp3',
+  artist: 'Tanishka',
+  album: 'Birthday Special',
+  cover: cover('cover-midnight'),
+  audio: `${media.assets}/Hum tere pyar me.mp3`,
+  duration: '3:20'
+},
+{
+  id: 'Kaun tuzhe.mp3',
+  title: 'Kaun tuzhe.mp3',
+  artist: 'Tanishka',
+  album: 'For Chiku',
+  cover: cover('cover-midnight'),
+  audio: `${media.assets}/Kaun tuzhe.mp3`,
+  duration: '4:10'
 },
 ];
 export const playlists = [
