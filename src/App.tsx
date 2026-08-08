@@ -76,7 +76,52 @@ function SectionTitle({ eyebrow, title, action }: { eyebrow: string; title: stri
 
 function Home({ play, setView, recently, liked, search }: { play: (t: Track) => void; setView: (v: View) => void; recently: Track[]; liked: Set<string>; search: string }) {
   const found = tracks.filter((t) => `${t.title} ${t.artist}`.toLowerCase().includes(search.toLowerCase()));
-  return <div className="space-y-14 pb-28"><section className="reveal relative overflow-hidden rounded-[1.7rem] border border-white/10 p-7 md:p-12" style={{ background: 'radial-gradient(circle at 80% 15%, rgba(177,122,83,.3), transparent 31%), linear-gradient(120deg,#163228,#10251e 55%,#392c23)' }}><div className="relative z-10 max-w-xl"><p className="mono mb-5 text-[10px] uppercase tracking-[.3em] text-primary">Good evening, H</p><h1 className="serif text-6xl leading-[.9] md:text-8xl">You are<br /><em className="text-primary">home.</em></h1><p className="mt-6 max-w-sm text-sm leading-6 text-[#d1d0c3]">Tonight's soundtrack is waiting. Start wherever the feeling takes you.</p><button onClick={() => play(tracks[0])} className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-[.14em] text-primary-foreground"><Play size={15} fill="currentColor" /> Continue listening</button></div><div className="absolute -right-8 bottom-[-80px] hidden h-80 w-80 rounded-full border border-primary/30 md:block"><div className="absolute inset-8 rounded-full border border-primary/20"><div className="absolute inset-8 rounded-full border border-primary/20" /></div></div><div className="absolute right-12 top-12 mono text-[9px] uppercase tracking-[.3em] text-primary/50">Side A<br />for you</div></section>
+  return <div className="space-y-14 pb-28">w-sm text-sm leading-6 text-[#d1d0c3]">
+    <section
+  className="reveal relative overflow-hidden rounded-[1.7rem] border border-white/10 p-7 md:p-12"
+  style={{
+    backgroundImage:
+      "linear-gradient(90deg, rgba(7,16,12,.92) 0%, rgba(7,16,12,.65) 45%, rgba(7,16,12,.25) 100%), url('/assets/main-photo.jpg')",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
+  <div className="relative z-10 max-w-xl">
+    <p className="mono mb-5 text-[10px] uppercase tracking-[.3em] text-primary">
+      Good evening, H
+    </p>
+
+    <h1 className="serif text-6xl leading-[.9] md:text-8xl">
+      You are
+      <br />
+      <em className="text-primary">home.</em>
+    </h1>
+
+    <p className="mt-6 max-w-sm text-sm leading-6 text-[#d1d0c3]">
+      Tonight's soundtrack is waiting. Start wherever the feeling takes you.
+    </p>
+
+    <button
+      onClick={() => play(tracks[0])}
+      className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-[.14em] text-primary-foreground"
+    >
+      <Play size={15} fill="currentColor" />
+      Continue listening
+    </button>
+  </div>
+
+  <div className="absolute -right-8 bottom-[-80px] hidden h-80 w-80 rounded-full border border-primary/30 md:block">
+    <div className="absolute inset-8 rounded-full border border-primary/20">
+      <div className="absolute inset-8 rounded-full border border-primary/20" />
+    </div>
+  </div>
+
+  <div className="absolute right-12 top-12 mono text-[9px] uppercase tracking-[.3em] text-primary/50">
+    Side A
+    <br />
+    for you
+  </div>
+</section>
     <section><SectionTitle eyebrow="A little something" title="Featured playlist" action="6 collections" /><div className="grid gap-4 md:grid-cols-[1.4fr_1fr_1fr]">{playlists.slice(0, 3).map((p, i) => <button key={p.name} onClick={() => setView('playlists')} className={`group relative overflow-hidden rounded-2xl border border-white/10 p-5 text-left transition-all hover:-translate-y-1 ${i === 0 ? 'min-h-52 md:row-span-2' : 'min-h-24'}`} style={{ background: `linear-gradient(135deg, ${p.color}44, #112019 75%)` }}><div className="relative z-10"><span className="mono text-[9px] uppercase tracking-[.2em] text-primary/80">{i === 0 ? 'The essential collection' : 'Playlist'}</span><h3 className="serif mt-8 text-3xl text-[#eee3d3]">{p.name}</h3><p className="mt-1 max-w-[190px] text-xs text-muted-foreground">{p.detail}</p></div><div className="absolute -bottom-8 -right-4 h-36 w-36 rotate-12 rounded-2xl bg-black/20 p-3 shadow-2xl"><Cover src={p.cover} title={p.name} className="h-full w-full" /></div></button>)}</div></section>
     <section><SectionTitle eyebrow="The last few chapters" title="Recently played" action={recently.length ? `${recently.length} tracks` : 'Nothing yet'} />{recently.length ? <TrackList tracks={recently} play={play} liked={liked} /> : <div className="glass rounded-2xl p-10 text-center"><Disc3 className="mx-auto mb-3 text-primary/70" size={30} /><p className="serif text-2xl">Your listening history begins here.</p><p className="mt-2 text-xs text-muted-foreground">Press play on a song and it will find its way home.</p></div>}</section>
     {search && <section><SectionTitle eyebrow="Search results" title={found.length ? 'Found for you' : 'Nothing found'} /><TrackList tracks={found} play={play} liked={liked} /></section>}
