@@ -125,7 +125,7 @@ export const playlists = [
   },
 ];
 
-export const memories = [
+
 export const memories = [
   { src: media.photos[0], title: 'The first late night', note: 'somewhere between hello and home' },
   { src: media.photos[1], title: 'A Sunday we kept', note: 'warm light, cold coffee, perfect timing' },
