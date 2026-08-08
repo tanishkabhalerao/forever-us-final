@@ -72,10 +72,9 @@ export const playlists = [
     trackIds: [
       'Soch na Sake.mp3',
       'Tere Hawale.mp3',
-      'Baton Ko Teri.mp3',
+      'baton-ko-teri.mp3',
     ],
   },
-
   {
     name: 'For Chiku',
     detail: 'for the hours that belong to us',
@@ -86,7 +85,6 @@ export const playlists = [
       'Tere Hawale.mp3',
     ],
   },
-
   {
     name: 'Birthday Special',
     detail: 'made for this exact day',
@@ -97,14 +95,13 @@ export const playlists = [
       'Hum tere pyar me.mp3',
     ],
   },
-
   {
     name: 'Songs Dedicated To YOU',
     detail: 'a little off-key, completely true',
     color: '#b8996c',
     cover: cover('playlist-sang'),
     trackIds: [
-      'Baton Ko Teri.mp3',
+      'baton-ko-teri.mp3',
       'Tere Hawale.mp3',
       'Soch na Sake.mp3',
       'Mala ved lagle.mp3',
@@ -112,14 +109,13 @@ export const playlists = [
       'Kaun tuzhe.mp3',
     ],
   },
-
   {
     name: 'Forever Us',
     detail: 'all of it, in one place',
     color: '#9b6471',
     cover: cover('playlist-forever'),
     trackIds: [
-      'Baton Ko Teri.mp3',
+      'baton-ko-teri.mp3',
       'Tere Hawale.mp3',
       'Soch na Sake.mp3',
       'Mala ved lagle.mp3',
@@ -128,7 +124,8 @@ export const playlists = [
     ],
   },
 ];
-];
+
+export const memories = [
 export const memories = [
   { src: media.photos[0], title: 'The first late night', note: 'somewhere between hello and home' },
   { src: media.photos[1], title: 'A Sunday we kept', note: 'warm light, cold coffee, perfect timing' },
