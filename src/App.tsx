@@ -29,7 +29,7 @@ function Entry({ onEnter }: { onEnter: () => void }) {
     <div className="relative z-10 flex min-h-[100dvh] flex-col justify-between px-7 py-8 md:px-16 md:py-12">
       <div className="flex items-center justify-between"><Mark /><span className="mono text-[10px] uppercase tracking-[.3em] text-primary/65">A private frequency</span></div>
       <div className="max-w-3xl pb-10 md:pb-20">
-        <p className="mono mb-6 text-[10px] uppercase tracking-[.42em] text-primary">For one person only · 14.06.26</p>
+        <p className="mono mb-6 text-[10px] uppercase tracking-[.42em] text-primary">For My Birthday Boy · 12.08.26</p>
         <h1 className="serif max-w-2xl text-[clamp(4rem,11vw,9.5rem)] leading-[.82] tracking-[-.04em] text-[#eadfcb]">A little<br /><em className="text-primary">world</em><br />for us.</h1>
         <p className="mt-9 max-w-sm text-sm leading-7 text-[#c5cabb]">Every song is a chapter. Every chapter leads back to you. Take your time in here.</p>
         <button onClick={onEnter} className="glow mt-9 inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[.2em] text-primary-foreground transition-transform hover:-translate-y-1" aria-label="Enter Forever Us">Enter the room <ArrowRight size={16} /></button>
@@ -297,7 +297,7 @@ function VoiceNotes() {
 }
 
 function Timeline() {
-  const events = [{ date:'14 Sep 2022', title:'First Text', detail:'A small hello that quietly changed everything.' }, {date:'20 Sep 2022', title:'First Call', detail:'Three hours, no awkward silences.'}, {date:'08 Oct 2022', title:'First Date', detail:'The beginning of every favorite memory.'}, {date:'Today', title:'Still Here', detail:'The best chapter is the one we are writing now.'}];
+  const events = [{ date:'02 Jan 2025', title:'First Meet', detail:'A small hello that quietly changed everything.' }, {date:'20 Sep 2022', title:'First Call', detail:'Three hours, no awkward silences.'}, {date:'08 Oct 2022', title:'First Date', detail:'The beginning of every favorite memory.'}, {date:'Today', title:'Still Here', detail:'The best chapter is the one we are writing now.'}];
   return <div className="pb-28"><SectionTitle eyebrow="Our story, in order" title="The timeline" action="four turning points" /><div className="relative mx-auto max-w-3xl py-8 before:absolute before:bottom-0 before:left-4 before:top-0 before:w-px before:bg-primary/30 md:before:left-1/2">{events.map((e, i) => <motion.div initial={{ opacity:0, y:15 }} animate={{ opacity:1, y:0 }} transition={{ delay:i*.1 }} key={e.title} className={`relative mb-14 pl-12 md:w-1/2 md:pl-0 ${i % 2 ? 'md:ml-auto md:pl-12' : 'md:pr-12 md:text-right'}`}><span className="absolute left-[9px] top-1 h-3 w-3 rounded-full border-2 border-primary bg-[#0b1813] md:left-auto md:right-[-6px] md:translate-x-1/2" style={i%2 ? {left:'-6px', right:'auto'} : undefined} /><p className="mono text-[9px] uppercase tracking-[.22em] text-primary">{e.date}</p><h3 className="serif mt-2 text-4xl">{e.title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{e.detail}</p></motion.div>)}</div></div>;
 }
 
