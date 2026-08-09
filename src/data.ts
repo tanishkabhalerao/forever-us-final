@@ -136,8 +136,24 @@ export const playlists = [
 
 
 export const memories = [
-  { src: media.photos[0], title: 'The first late night', note: 'somewhere between hello and home' },
-  { src: media.photos[1], title: 'A Sunday we kept', note: 'warm light, cold coffee, perfect timing' },
-  { src: media.photos[2], title: 'Us, in motion', note: 'the best kind of blurry' },
-  { src: media.photos[3], title: 'Still my favorite view', note: 'every version of you' },
+  {
+    src: media.photos[0],
+    title: 'Back When We Were Just Friends',
+    note: 'Manali, before either of us knew what was coming.',
+  },
+  {
+    src: media.photos[1],
+    title: 'A Little More Than Friends',
+    note: 'Our first concert together, and somewhere in between the music and the moment, we became us.',
+  },
+  {
+    src: media.photos[2],
+    title: 'Goa Looks Better With You',
+    note: 'Just us, being cute and doing absolutely nothing important.',
+  },
+  {
+    src: media.photos[3],
+    title: 'Forever Looks Like This',
+    note: 'You, me, tradition, and a memory I never want to forget.',
+  },
 ];
