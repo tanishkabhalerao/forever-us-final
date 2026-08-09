@@ -297,10 +297,76 @@ function VoiceNotes() {
 }
 
 function Timeline() {
-  const events = [{ date:'02 Jan 2025', title:'First Meet', detail:'That ultimate Raigbaiting towards each other.' }, {date:'13 Feb 2025', title:'You Confessed', detail:'All The Chaos That Night,Could'nt Forget.'}, {date:'07 Apr 2026', title:'Finally Together', detail:'That Awkwardness At Khandala And The Best Feelings From There.'}, {date:'Today', title:'Still Here', detail:'The best chapter is the one we are writing now.'}];
-  return <div className="pb-28"><SectionTitle eyebrow="Our story, in order" title="The timeline" action="four turning points" /><div className="relative mx-auto max-w-3xl py-8 before:absolute before:bottom-0 before:left-4 before:top-0 before:w-px before:bg-primary/30 md:before:left-1/2">{events.map((e, i) => <motion.div initial={{ opacity:0, y:15 }} animate={{ opacity:1, y:0 }} transition={{ delay:i*.1 }} key={e.title} className={`relative mb-14 pl-12 md:w-1/2 md:pl-0 ${i % 2 ? 'md:ml-auto md:pl-12' : 'md:pr-12 md:text-right'}`}><span className="absolute left-[9px] top-1 h-3 w-3 rounded-full border-2 border-primary bg-[#0b1813] md:left-auto md:right-[-6px] md:translate-x-1/2" style={i%2 ? {left:'-6px', right:'auto'} : undefined} /><p className="mono text-[9px] uppercase tracking-[.22em] text-primary">{e.date}</p><h3 className="serif mt-2 text-4xl">{e.title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{e.detail}</p></motion.div>)}</div></div>;
-}
+  const events = [
+    {
+      date: '02 Jan 2025',
+      title: 'First Meet',
+      detail: 'That ultimate Raigbaiting towards each other.',
+    },
+    {
+      date: '13 Feb 2025',
+      title: 'You Confessed',
+      detail: "All The Chaos That Night, Couldn't Forget.",
+    },
+    {
+      date: '07 Apr 2026',
+      title: 'Finally Together',
+      detail: 'That Awkwardness At Khandala And The Best Feelings From There.',
+    },
+    {
+      date: 'Today',
+      title: 'Still Here',
+      detail: 'The best chapter is the one we are writing now.',
+    },
+  ];
 
+  return (
+    <div className="pb-28">
+      <SectionTitle
+        eyebrow="Our story, in order"
+        title="The timeline"
+        action="four turning points"
+      />
+
+      <div className="relative mx-auto max-w-3xl py-8 before:absolute before:bottom-0 before:left-4 before:top-0 before:w-px before:bg-primary/30 md:before:left-1/2">
+        {events.map((e, i) => (
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.1 }}
+            key={e.title}
+            className={`relative mb-14 pl-12 md:w-1/2 md:pl-0 ${
+              i % 2
+                ? 'md:ml-auto md:pl-12'
+                : 'md:pr-12 md:text-right'
+            }`}
+          >
+            <span
+              className="absolute left-[9px] top-1 h-3 w-3 rounded-full border-2 border-primary bg-[#0b1813] md:left-auto md:right-[-6px] md:translate-x-1/2"
+              style={
+                i % 2
+                  ? { left: '-6px', right: 'auto' }
+                  : undefined
+              }
+            />
+
+            <p className="mono text-[9px] uppercase tracking-[.22em] text-primary">
+              {e.date}
+            </p>
+
+            <h3 className="serif mt-2 text-4xl">
+              {e.title}
+            </h3>
+
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              {e.detail}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
 function Wrapped({ play }: { play: (t: Track) => void }) {
   return <div className="pb-28"><section className="relative min-h-[520px] overflow-hidden rounded-[1.7rem] border border-primary/20 p-8 md:p-16" style={{ background:'radial-gradient(circle at 80% 18%, #bd8d6e55, transparent 24%), radial-gradient(circle at 20% 82%, #4f816455, transparent 28%), #16251f' }}><Particles /><div className="relative z-10 max-w-3xl"><p className="mono text-[10px] uppercase tracking-[.35em] text-primary">Your year in us · 2026</p><h1 className="serif mt-10 text-7xl leading-[.8] md:text-[9rem]">Wrapped<br /><em className="text-primary">in love.</em></h1><p className="mt-10 max-w-md text-base leading-7 text-[#cbd0c3]">A completely unscientific, deeply accurate report on the year we kept choosing each other.</p><button onClick={() => play(tracks[1])} className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-xs font-semibold text-primary-foreground"><Play size={14} fill="currentColor" /> Play the year</button></div></section><div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[['47.2','hours listening together'],['126','songs sent after midnight'],['08','cities in our story'],['∞','reasons, still']].map(([n,l],i) => <div className="glass rounded-2xl p-6" key={l}><p className="serif text-5xl text-primary">{n}</p><p className="mt-3 text-xs text-muted-foreground">{l}</p><div className="mt-8 h-1 rounded-full bg-primary/20"><div className="h-1 rounded-full bg-primary" style={{width:`${[72,84,51,100][i]}%`}} /></div></div>)}</div></div>;
 }
