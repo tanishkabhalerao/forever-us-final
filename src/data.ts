@@ -156,4 +156,14 @@ export const memories = [
     title: 'Most beautiful Photo',
     note: 'You, me, tradition, and a memory I never want to forget.',
   },
+   {
+    src: media.photos[4],
+    title: 'Until The Next One',
+    note: 'One last photo before goodbye — definitely not the last memory.',
+  },
+  {
+  src: media.photos[5],
+  title: 'You Made The Effort',
+  note: 'You came all the way just to see me.',
+},
 ];
