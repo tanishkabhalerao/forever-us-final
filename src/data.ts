@@ -8,9 +8,9 @@ export const media = {
     '/assets/memory-01.jpg',
     '/assets/memory-02.jpg',
     '/assets/memory-03.jpg',
-    '/assets/memory-04.jpg'
-    '/assets/memory-05.jpg
-    '/assets/memory-06.jpg
+    '/assets/memory-04.jpg',
+    '/assets/memory-05.jpg',
+    '/assets/memory-06.jpg',
   ],
   voiceNotes: [
     '/assets/voice-note-01.mp3',
