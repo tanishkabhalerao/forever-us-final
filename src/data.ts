@@ -153,7 +153,7 @@ export const memories = [
   },
   {
     src: media.photos[3],
-    title: 'Forever Looks Like This',
+    title: 'Most beautiful Photo',
     note: 'You, me, tradition, and a memory I never want to forget.',
   },
 ];
