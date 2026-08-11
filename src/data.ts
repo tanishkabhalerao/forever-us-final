@@ -1,9 +1,20 @@
-export type Track = { id: string; title: string; artist: string; album: string; cover: string; audio: string; duration: string; lyrics?: { time: number; line: string }[] };
+export type Track = {
+  id: string;
+  title: string;
+  artist: string;
+  album: string;
+  cover: string;
+  audio: string;
+  duration: string;
+  lyrics?: { time: number; line: string }[];
+};
+
 export const media = {
   assets: '/assets',
   mainPhoto: '/assets/main-photo.jpg',
   entryVideo: '/assets/entry-loop.mp4',
   surpriseVideo: '/assets/birthday-surprise.mp4',
+
   photos: [
     '/assets/memory-01.jpg',
     '/assets/memory-02.jpg',
@@ -12,68 +23,108 @@ export const media = {
     '/assets/memory-05.jpg',
     '/assets/memory-06.jpg',
   ],
-  voiceNotes: [
-    '/assets/voice-note-01.mp3',
-    '/assets/voice-note-02.mp3'
-  ],
 };
+
 const cover = (name: string) => `${media.assets}/${name}.jpg`;
+
 export const tracks: Track[] = [
- {
-  id: 'Mala ved lagle.mp3',
-  title: 'Mala ved lagle.mp3',
-  artist: 'Tanishka',
-  album: 'Birthday Special',
-  cover: cover('cover-midnight'),
-  audio: `${media.assets}/Mala ved lagle.mp3`,
-  duration: '3:30'
-},
   {
-  id: 'Tere Hawale.mp3',
-  title: 'Tere Hawale.mp3',
-  artist: 'Tanishka',
-  album: 'Forever Us',
-  cover: cover('cover-midnight'),
-  audio: `${media.assets}/Tere Hawale.mp3`,
-  duration: '3:30'
-},
-{
-  id: 'Soch na Sake.mp3',
-  title: 'Soch na Sake.mp3',
-  artist: 'Tanishka',
-  album: 'Our Story',
-  cover: cover('cover-midnight'),
-  audio: `${media.assets}/Soch na Sake.mp3`,
-  duration: '4:00'
-},
-{
-  id: 'baton-ko-teri.mp3',
-  title: 'Baton Ko Teri.mp3',
-  artist: 'Tanishka',
-  album: 'Songs Dedicated To YOU',
-  cover: cover('cover-midnight'),
-  audio: `${media.assets}/baton-ko-teri.mp3`,
-  duration: '3:45'
-},
-{
-  id: 'Hum tere pyar me.mp3',
-  title: 'Hum tere pyar me.mp3',
-  artist: 'Tanishka',
-  album: 'Birthday Special',
-  cover: cover('cover-midnight'),
-  audio: `${media.assets}/Hum tere pyar me.mp3`,
-  duration: '3:20'
-},
-{
-  id: 'Kaun tuzhe.mp3',
-  title: 'Kaun tuzhe.mp3',
-  artist: 'Tanishka',
-  album: 'For Chiku',
-  cover: cover('cover-midnight'),
-  audio: `${media.assets}/Kaun tuzhe.mp3`,
-  duration: '4:10'
-},
+    id: 'Mala ved lagle.mp3',
+    title: 'Mala ved lagle.mp3',
+    artist: 'Tanishka',
+    album: 'Birthday Special',
+    cover: cover('cover-midnight'),
+    audio: `${media.assets}/Mala ved lagle.mp3`,
+    duration: '3:30',
+    lyrics: [
+      {
+        time: 0,
+        line: 'This one just feels like you. ❤️',
+      },
+    ],
+  },
+
+  {
+    id: 'Tere Hawale.mp3',
+    title: 'Tere Hawale.mp3',
+    artist: 'Tanishka',
+    album: 'Forever Us',
+    cover: cover('cover-midnight'),
+    audio: `${media.assets}/Tere Hawale.mp3`,
+    duration: '3:30',
+    lyrics: [
+      {
+        time: 0,
+        line: 'Somehow this song always finds its way back to us.',
+      },
+    ],
+  },
+
+  {
+    id: 'Soch na Sake.mp3',
+    title: 'Soch na Sake.mp3',
+    artist: 'Tanishka',
+    album: 'Our Story',
+    cover: cover('cover-midnight'),
+    audio: `${media.assets}/Soch na Sake.mp3`,
+    duration: '4:00',
+    lyrics: [
+      {
+        time: 0,
+        line: "One of those songs that says things I wouldn't know how to say.",
+      },
+    ],
+  },
+
+  {
+    id: 'baton-ko-teri.mp3',
+    title: 'Baton Ko Teri.mp3',
+    artist: 'Tanishka',
+    album: 'Songs Dedicated To YOU',
+    cover: cover('cover-midnight'),
+    audio: `${media.assets}/baton-ko-teri.mp3`,
+    duration: '3:45',
+    lyrics: [
+      {
+        time: 0,
+        line: 'This one is just for you.',
+      },
+    ],
+  },
+
+  {
+    id: 'Hum tere pyar me.mp3',
+    title: 'Hum tere pyar me.mp3',
+    artist: 'Tanishka',
+    album: 'Birthday Special',
+    cover: cover('cover-midnight'),
+    audio: `${media.assets}/Hum tere pyar me.mp3`,
+    duration: '3:20',
+    lyrics: [
+      {
+        time: 0,
+        line: 'A little too accurate sometimes 😂',
+      },
+    ],
+  },
+
+  {
+    id: 'Kaun tuzhe.mp3',
+    title: 'Kaun tuzhe.mp3',
+    artist: 'Tanishka',
+    album: 'For Chiku',
+    cover: cover('cover-midnight'),
+    audio: `${media.assets}/Kaun tuzhe.mp3`,
+    duration: '4:10',
+    lyrics: [
+      {
+        time: 0,
+        line: 'You already know why this one is here.',
+      },
+    ],
+  },
 ];
+
 export const playlists = [
   {
     name: 'Our Story',
@@ -86,6 +137,7 @@ export const playlists = [
       'baton-ko-teri.mp3',
     ],
   },
+
   {
     name: 'For Chiku',
     detail: 'for the hours that belong to us',
@@ -96,6 +148,7 @@ export const playlists = [
       'Tere Hawale.mp3',
     ],
   },
+
   {
     name: 'Birthday Special',
     detail: 'made for this exact day',
@@ -106,6 +159,7 @@ export const playlists = [
       'Hum tere pyar me.mp3',
     ],
   },
+
   {
     name: 'Songs Dedicated To YOU',
     detail: 'a little off-key, completely true',
@@ -120,6 +174,7 @@ export const playlists = [
       'Kaun tuzhe.mp3',
     ],
   },
+
   {
     name: 'Forever Us',
     detail: 'the chapters we wrote together ♡',
@@ -136,36 +191,40 @@ export const playlists = [
   },
 ];
 
-
 export const memories = [
   {
     src: media.photos[0],
     title: 'Back When We Were Just Friends',
     note: 'Manali, before either of us knew what was coming.',
   },
+
   {
     src: media.photos[1],
     title: 'A Little More Than Friends',
     note: 'Our first concert together, and somewhere in between the music and the moment, we became us.',
   },
+
   {
     src: media.photos[2],
     title: 'Goa Looks Better With You',
     note: 'Just us, being cute and doing absolutely nothing important.',
   },
+
   {
     src: media.photos[3],
-    title: 'Most beautiful Photo',
+    title: 'The Most Beautiful Photo',
     note: 'You, me, tradition, and a memory I never want to forget.',
   },
-   {
+
+  {
     src: media.photos[4],
     title: 'Until The Next One',
     note: 'One last photo before goodbye — definitely not the last memory.',
   },
+
   {
-  src: media.photos[5],
-  title: 'You Made The Effort',
-  note: 'You came all the way just to see me.',
-},
+    src: media.photos[5],
+    title: 'You Made The Effort',
+    note: 'You came all the way just to see me.',
+  },
 ];
