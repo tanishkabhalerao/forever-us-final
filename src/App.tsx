@@ -373,7 +373,45 @@ function Wrapped({ play }: { play: (t: Track) => void }) {
 
 function Surprise({ play }: { play: (t: Track) => void }) {
   const [open, setOpen] = useState(false);
-  return <div className="pb-28"><AnimatePresence mode="wait">{!open ? <motion.section key="locked" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="relative overflow-hidden rounded-[1.7rem] border border-primary/20 p-8 text-center md:p-20" style={{background:'radial-gradient(circle at 50% 30%, #a77d6533, transparent 35%),#18251f'}}><div className="relative z-10 mx-auto max-w-lg"><div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-primary/40 bg-primary/10 text-primary"><LockKeyhole size={28} /></div><p className="mono mt-8 text-[10px] uppercase tracking-[.32em] text-primary">One more thing</p><h1 className="serif mt-4 text-6xl">A secret<br /><em className="text-primary">for you.</em></h1><p className="mx-auto mt-6 max-w-sm text-sm leading-6 text-muted-foreground">There is a room behind this door. You have to promise to listen until the very end.</p><button onClick={() => setOpen(true)} className="glow mt-8 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[.16em] text-primary-foreground">Unlock the surprise</button></div></motion.section> : <motion.div key="open" initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="space-y-8"><div className="glass overflow-hidden rounded-[1.7rem]"><div className="relative aspect-video bg-[#192a22]"><video controls className="h-full w-full object-cover" src={media.surpriseVideo} onError={(e)=>{e.currentTarget.style.display='none'}} /><div className="pointer-events-none absolute inset-0 grid place-items-center"><Sparkles className="text-primary/60" size={40}/></div></div><div className="p-7 md:p-10"><p className="mono text-[10px] uppercase tracking-[.3em] text-primary">You found it</p><h1 className="serif mt-3 text-6xl">Happy birthday,<br /><em className="text-primary">my love.</em></h1><p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">If I could give you one thing, it would be the ability to see yourself through my eyes for one ordinary day. You would understand why every song in here keeps finding its way back to you.</p><button onClick={() => play(tracks[2])} className="mt-7 inline-flex items-center gap-2 text-sm text-primary"><Play size={15} fill="currentColor"/> Play the special song</button></div></div><div><SectionTitle eyebrow="One more look" title="The little gallery" /><div className="grid grid-cols-2 gap-3 md:grid-cols-4">{memories.map((m)=><Cover key={m.title} src={m.src} title={m.title} className="h-40 w-full" />)}</div></div></motion.div>}</AnimatePresence></div>;
+  return <div className="pb-28"><AnimatePresence mode="wait">{!open ? <motion.section key="locked" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="relative overflow-hidden rounded-[1.7rem] border border-primary/20 p-8 text-center md:p-20" style={{background:'radial-gradient(circle at 50% 30%, #a77d6533, transparent 35%),#18251f'}}><div className="relative z-10 mx-auto max-w-lg"><div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-primary/40 bg-primary/10 text-primary"><LockKeyhole size={28} /></div><p className="mono mt-8 text-[10px] uppercase tracking-[.32em] text-primary">One more thing</p><h1 className="serif mt-4 text-6xl">A secret<br /><em className="text-primary">for you.</em></h1><p className="mx-auto mt-6 max-w-sm text-sm leading-6 text-muted-foreground">There is a room behind this door. You have to promise to listen until the very end.</p><button onClick={() => setOpen(true)} className="glow mt-8 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[.16em] text-primary-foreground">Unlock the surprise</button></div></motion.section> : <motion.div key="open" initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="space-y-8"><div className="glass overflow-hidden rounded-[1.7rem]"><div className="relative aspect-video bg-[#192a22]"><video controls className="h-full w-full object-cover" src={media.surpriseVideo} onError={(e)=>{e.currentTarget.style.display='none'}} /><div className="pointer-events-none absolute inset-0 grid place-items-center"><Sparkles className="text-primary/60" size={40}/></div></div><div className="p-7 md:p-10"><p className="mono text-[10px] uppercase tracking-[.3em] text-primary">You found it</p><h1 className="serif mt-3 text-6xl">Happy birthday,<br /><em className="text-primary">my love.</em></h1><p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">If I could give you one thing, it would be the ability to see yourself through my eyes for one ordinary day. You would understand why every song in here keeps finding its way back to you.</p><div className="mt-8 max-w-xl rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-7 md:p-9">
+  <p className="mono text-[9px] uppercase tracking-[.25em] text-primary">
+    A little message for you
+  </p>
+
+  <h2 className="serif mt-3 text-4xl">
+    Happy birthdayyy ❤️
+  </h2>
+
+  <div className="mt-6 space-y-4 text-sm leading-7 text-[#d1d0c3]">
+    <p>
+      I honestly didn't know what to get you, so I made you this little thing instead.
+    </p>
+
+    <p>
+      It's basically a collection of all the random things that remind me of us —
+      our photos, our songs, the stupid little moments, and everything in between.
+    </p>
+
+    <p>
+      I know some of these moments might seem small, but I remember them,
+      and that's what matters to me.
+    </p>
+
+    <p>
+      We've come a pretty long way from where we started, and I'm really glad
+      I got to experience all of this with you.
+    </p>
+
+    <p>
+      Anyway, enough emotional nonsense 😂
+      I hope you have the best birthday. You deserve it.
+    </p>
+
+    <p className="pt-2 text-base">
+      Happy birthday, Chiku. ❤️
+    </p>
+  </div>
+</div><button onClick={() => play(tracks[2])} className="mt-7 inline-flex items-center gap-2 text-sm text-primary"><Play size={15} fill="currentColor"/> Play the special song</button></div></div><div><SectionTitle eyebrow="One more look" title="The little gallery" /><div className="grid grid-cols-2 gap-3 md:grid-cols-4">{memories.map((m)=><Cover key={m.title} src={m.src} title={m.title} className="h-40 w-full" />)}</div></div></motion.div>}</AnimatePresence></div>;
 }
 
 function App() {
