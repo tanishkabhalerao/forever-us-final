@@ -3,13 +3,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import {
   Archive, ArrowLeft, ArrowRight, AudioLines, BarChart3, Bell, BookOpen, ChevronDown, CircleHelp,
   Clock3, Disc3, Download, Heart, Home as HomeIcon, Image as ImageIcon, ListMusic, LockKeyhole,
-  Menu, MessageCircleHeart, Mic2, MoreHorizontal, Pause, Play, Repeat2, Search, Settings2,
+  Menu, MessageCircleHeart, MoreHorizontal, Pause, Play, Repeat2, Search, Settings2,
   Shuffle, SkipBack, SkipForward, Sparkles, Volume2, VolumeX, X, Zap
 } from 'lucide-react';
 import { media, memories, playlists, tracks, type Track } from './data';
 import './index.css';
 
-type View = 'home' | 'playlists' | 'lyrics' | 'memories' | 'voice' | 'timeline' | 'wrapped' | 'surprise';
+type View = 'home' | 'playlists' | 'lyrics' | 'memories' | 'timeline' | 'wrapped' | 'surprise';
 const fallback = (title: string, tone = '#1c332d') => `linear-gradient(145deg, ${tone}, #0d1714 72%, #c39a67)`;
 const formatTime = (value: number) => `${Math.floor(value / 60)}:${Math.floor(value % 60).toString().padStart(2, '0')}`;
 
@@ -51,7 +51,7 @@ function Sidebar({ view, setView, mobileOpen, close }: { view: View; setView: (v
   const items: { id: View; label: string; icon: typeof HomeIcon }[] = [
     { id: 'home', label: 'Home', icon: HomeIcon }, { id: 'playlists', label: 'Our playlists', icon: ListMusic },
     { id: 'lyrics', label: 'Lyrics', icon: BookOpen }, { id: 'memories', label: 'Memories', icon: ImageIcon },
-    { id: 'voice', label: 'Voice notes', icon: Mic2 }, { id: 'timeline', label: 'Our timeline', icon: Clock3 },
+  
     { id: 'wrapped', label: 'Wrapped 2026', icon: BarChart3 }, { id: 'surprise', label: 'Birthday surprise', icon: LockKeyhole },
   ];
   return <aside className={`fixed inset-y-0 left-0 z-40 w-64 border-r border-white/10 bg-[#0b1813]/95 p-7 backdrop-blur-2xl transition-transform md:relative md:translate-x-0 ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}`}>
@@ -231,12 +231,7 @@ function Home({
               t: "Look back",
               d: "The gallery of us",
             },
-            {
-              v: "voice" as View,
-              icon: Mic2,
-              t: "Hear me",
-              d: "Voice notes, saved",
-            },
+            
             {
               v: "wrapped" as View,
               icon: Sparkles,
@@ -290,11 +285,7 @@ function Memories() {
   return <div className="pb-28"><SectionTitle eyebrow="Still frames" title="Memories" action="a gallery of us" /><div className="columns-1 gap-4 sm:columns-2 lg:columns-3">{memories.map((m, i) => <button key={m.title} onClick={() => setSelected(i)} className="group mb-4 block w-full break-inside-avoid text-left"><div className="relative overflow-hidden rounded-2xl" style={{ background: fallback(m.title, ['#61473d','#3e594e','#536072','#7e5b58'][i]) }}><img src={m.src} alt={m.title} className="min-h-56 w-full object-cover transition duration-500 group-hover:scale-105" onError={(e) => { e.currentTarget.style.display = 'none'; }} /><div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" /><div className="absolute bottom-4 left-4"><p className="serif text-2xl">{m.title}</p><p className="text-xs text-white/60">{m.note}</p></div></div></button>)}</div>{selected !== null && <div className="fixed inset-0 z-[60] grid place-items-center bg-black/85 p-5 backdrop-blur-sm" onClick={() => setSelected(null)}><button className="absolute right-6 top-6 text-white" aria-label="Close memory"><X /></button><div className="max-h-[85vh] max-w-4xl overflow-hidden rounded-2xl" onClick={(e) => e.stopPropagation()}><img src={memories[selected].src} alt={memories[selected].title} className="max-h-[80vh] w-auto object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; }} /><div className="bg-[#15241d] p-4"><p className="serif text-2xl">{memories[selected].title}</p><p className="text-xs text-muted-foreground">{memories[selected].note}</p></div></div></div>}</div>;
 }
 
-function VoiceNotes() {
-  const [playing, setPlaying] = useState<number | null>(null);
-  const names = ['The one I recorded twice', 'A tiny message for later']; const dates = ['02:14 · saved at 01:03', '00:47 · saved on a Tuesday'];
-  return <div className="pb-28"><SectionTitle eyebrow="Unsent, then saved" title="Voice notes" action="press play, listen close" /><div className="grid gap-4 md:grid-cols-2">{names.map((n, i) => <div key={n} className="glass rounded-2xl p-5"><div className="flex items-start justify-between"><div className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent"><Mic2 size={20} /></div><button onClick={() => setPlaying(playing === i ? null : i)} className="grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground" aria-label={playing === i ? 'Pause voice note' : 'Play voice note'}>{playing === i ? <Pause size={16} /> : <Play size={16} fill="currentColor" />}</button></div><h3 className="serif mt-7 text-3xl">{n}</h3><p className="mt-2 text-xs text-muted-foreground">{dates[i]}</p><div className="visualizer mt-7 flex h-8 items-end gap-1 opacity-70">{Array.from({length: 25}, (_, j) => <span key={j} className="w-1 rounded-full bg-primary" style={{ height: `${8 + ((j * 17) % 23)}px`, animationPlayState: playing === i ? 'running' : 'paused' }} />)}</div><p className="mt-5 border-t border-white/10 pt-4 text-xs leading-5 text-muted-foreground">Personal audio will appear here when you add <span className="mono text-primary">{media.voiceNotes[i]}</span>.</p></div>)}</div></div>;
-}
+
 
 function Timeline() {
   const events = [
@@ -426,7 +417,7 @@ function App() {
   const previous = () => { const i=tracks.findIndex(t=>t.id===current.id); play(tracks[(i-1+tracks.length)%tracks.length]); };
   const seek = (v: number) => { setProgress(v); if (audioRef.current?.duration) audioRef.current.currentTime = v/100*audioRef.current.duration; };
   if (!entered) return <Entry onEnter={() => setEntered(true)} />;
-  return <div className="noise min-h-[100dvh] bg-[#0b1712]"><audio ref={audioRef} src={current.audio} /><div className="flex min-h-[100dvh]"><Sidebar view={view} setView={setView} mobileOpen={mobileOpen} close={() => setMobileOpen(false)} />{mobileOpen && <button className="fixed inset-0 z-30 bg-black/50 md:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation overlay" />}<div className="min-w-0 flex-1"><Topbar openMenu={() => setMobileOpen(true)} onSearch={setSearch} /><main className="mx-auto max-w-[1500px] p-5 md:p-10"><AnimatePresence mode="wait"><motion.div key={view} initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{duration:.25}}>{view === 'home' && <Home play={play} setView={setView} recently={recently} liked={likedIds} search={search} />}{view === 'playlists' && <Playlists play={play} />}{view === 'lyrics' && <Lyrics track={current} isPlaying={isPlaying} />}{view === 'memories' && <Memories />}{view === 'voice' && <VoiceNotes />}{view === 'timeline' && <Timeline />}{view === 'wrapped' && <Wrapped play={play} />}{view === 'surprise' && <Surprise play={play} />}</motion.div></AnimatePresence></main></div></div><Player track={current} isPlaying={isPlaying} setPlaying={setPlaying} next={next} previous={previous} liked={likedIds.has(current.id)} setLiked={(v) => setLikedIds(prev => { const n=new Set(prev); v ? n.add(current.id) : n.delete(current.id); return n; })} audioRef={audioRef} progress={progress} setProgress={seek} volume={volume} setVolume={setVolume} shuffle={shuffle} setShuffle={setShuffle} repeat={repeat} setRepeat={setRepeat} /></div>;
+  return <div className="noise min-h-[100dvh] bg-[#0b1712]"><audio ref={audioRef} src={current.audio} /><div className="flex min-h-[100dvh]"><Sidebar view={view} setView={setView} mobileOpen={mobileOpen} close={() => setMobileOpen(false)} />{mobileOpen && <button className="fixed inset-0 z-30 bg-black/50 md:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation overlay" />}<div className="min-w-0 flex-1"><Topbar openMenu={() => setMobileOpen(true)} onSearch={setSearch} /><main className="mx-auto max-w-[1500px] p-5 md:p-10"><AnimatePresence mode="wait"><motion.div key={view} initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{duration:.25}}>{view === 'home' && <Home play={play} setView={setView} recently={recently} liked={likedIds} search={search} />}{view === 'playlists' && <Playlists play={play} />}{view === 'lyrics' && <Lyrics track={current} isPlaying={isPlaying} />}{view === 'memories' && <Memories />}{view === 'timeline' && <Timeline />}{view === 'wrapped' && <Wrapped play={play} />}{view === 'surprise' && <Surprise play={play} />}</motion.div></AnimatePresence></main></div></div><Player track={current} isPlaying={isPlaying} setPlaying={setPlaying} next={next} previous={previous} liked={likedIds.has(current.id)} setLiked={(v) => setLikedIds(prev => { const n=new Set(prev); v ? n.add(current.id) : n.delete(current.id); return n; })} audioRef={audioRef} progress={progress} setProgress={seek} volume={volume} setVolume={setVolume} shuffle={shuffle} setShuffle={setShuffle} repeat={repeat} setRepeat={setRepeat} /></div>;
 }
 
 export default App;
